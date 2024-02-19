@@ -83,6 +83,33 @@
             }
             Console.WriteLine($"\t{f8} darab ilyen óra volt augusztusban");
 
+            Console.WriteLine("\n9. feladat:");
+            int f9 = 0;
+            for (int i = 0; i < 20; i++)
+            {
+                f9 += villamok[i]._orak.Sum();
+            }
+            Console.WriteLine($"\tAugusztus 20.-áig {f9} darab villámlást észleltek");
+
+            Console.WriteLine("\n10. feladat:");
+            int f10 = 0;
+            int f10Nap = 1;
+            int f10Ora = 1;
+            for (int i = 0; i < villamok.Count; i++)
+            {
+                for (int j = 0; j < villamok[i]._orak.Count; j++)
+                {
+                    if (villamok[i]._orak[j] < f3)
+                    {
+                        f3 = villamok[i]._orak[j];
+                        f3Nap = i + 1;
+                        f3Ora = j + 1;
+                    }
+                }
+            }
+            Console.WriteLine($"\tAugusztus {f10Nap}. napjának {f10Ora}. órájába volt a legkevesebb villám: {f10} darab");
+
+            Console.WriteLine("\n11. feladat:");
 
             Console.ReadLine();
         }
