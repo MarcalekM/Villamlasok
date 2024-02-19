@@ -1,4 +1,6 @@
-﻿namespace Villamlasok
+﻿using System.Text;
+
+namespace Villamlasok
 {
     internal class Program
     {
@@ -42,10 +44,16 @@
                 }
                 if (!f4.ContainsKey(i+1)) f4.Add(i+1, 0);
             }
+            using StreamWriter sw = new(
+                path: @"..\..\..\src\f4.txt",
+                encoding: UTF8Encoding.UTF8,
+                append: false);
             foreach (var f in f4)
             {
                 if(f.Value != 0)Console.WriteLine($"\tAugusztus {f.Key}: {f.Value}");
-                else Console.WriteLine($"\tAugusztus {f.Key}: Nem villámlott");
+                else Console.WriteLine($"\tAugusztus {f.Key}: null");
+                if (f.Value != 0) sw.WriteLine($"\tAugusztus {f.Key}: {f.Value}");
+                else sw.WriteLine($"\tAugusztus {f.Key}: null");
             }
 
             Console.WriteLine($"\n5. feladat:");
