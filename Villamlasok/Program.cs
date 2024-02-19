@@ -110,6 +110,13 @@
             Console.WriteLine($"\tAugusztus {f10Nap}. napjának {f10Ora}. órájába volt a legkevesebb villám: {f10} darab");
 
             Console.WriteLine("\n11. feladat:");
+            int f11 = villamok[6]._orak.Max();
+            int f11Ora = 0;
+            for (int i = 0; i < villamok[6]._orak.Count; i++)
+            {
+                if (villamok[6]._orak[i].Equals(f11)) f11Ora = i+1;
+            }
+            Console.WriteLine($"\tAugusztus 7.-én {f11Ora} órakor volt a legtöbb villámlás aznap: {f11} darab");
 
             Console.ReadLine();
         }
