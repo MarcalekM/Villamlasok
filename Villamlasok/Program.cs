@@ -42,7 +42,11 @@
                 }
                 if (!f4.ContainsKey(i+1)) f4.Add(i+1, 0);
             }
-            foreach (var f in f4) Console.WriteLine($"\tAugusztus {f.Key}: {f.Value}");
+            foreach (var f in f4)
+            {
+                if(f.Value != 0)Console.WriteLine($"\tAugusztus {f.Key}: {f.Value}");
+                else Console.WriteLine($"\tAugusztus {f.Key}: Nem villámlott");
+            }
 
             Console.WriteLine($"\n5. feladat:");
             int f5 = 0;
@@ -111,11 +115,7 @@
 
             Console.WriteLine("\n11. feladat:");
             int f11 = villamok[6]._orak.Max();
-            int f11Ora = 0;
-            for (int i = 0; i < villamok[6]._orak.Count; i++)
-            {
-                if (villamok[6]._orak[i].Equals(f11)) f11Ora = i+1;
-            }
+            int f11Ora = villamok[6]._orak.IndexOf(villamok[6]._orak.Max()) + 1;
             Console.WriteLine($"\tAugusztus 7.-én {f11Ora} órakor volt a legtöbb villámlás aznap: {f11} darab");
 
             Console.ReadLine();
