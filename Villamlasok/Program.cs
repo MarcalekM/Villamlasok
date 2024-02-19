@@ -19,15 +19,12 @@ namespace Villamlasok
             int f3Ora = 0;
             for (int i = 0; i < villamok.Count; i++)
             {
-                for (int j = 0; j < villamok[i]._orak.Count; j++)
-                {
-                    if (villamok[i]._orak[j] >f3)
+                    if (villamok[i]._orak.Max() >f3)
                     {
-                        f3 = villamok[i]._orak[j];
+                        f3 = villamok[i]._orak.Max();
                         f3Nap = i+1;
-                        f3Ora = j+1;
+                        f3Ora = villamok[i]._orak.IndexOf(villamok[i]._orak.Max()) + 1;
                     }
-                }
             }
             Console.WriteLine($"\tA legtöbb villám augusztus {f3Nap}. napjának {f3Ora}. órájában volt: {f3} darab");
 
